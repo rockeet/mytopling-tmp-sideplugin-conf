@@ -76,6 +76,20 @@
       }
     }
   },
+  "Comparator": {
+    "bytewise": {
+      "class": "BytewiseComparator",
+      "params": {
+        "need-not-any-param": "keep empty"
+      }
+    },
+    "rev": {
+      "class": "ReverseBytewiseComparator",
+      "params": {
+        "need-not-any-param": "used for rev cf"
+      }
+    }
+  },
   "TableFactory": {
     "auto_sort": {
       "class": "VecAutoSortTable",
@@ -302,6 +316,26 @@
       "write_buffer_size": "8M",
       "target_file_size_base": "8M",
       "merge_operator": "${system_merge_op}"
+    },
+    "encrypt": {
+      "template": "${default}",
+      "cf_paths": "/path/to/cf_datadir/encrypt"
+    },
+    "default_sk": {
+      "template": "${default}",
+      "//cf_paths": "/path/to/cf_datadir/default_sk"
+    },
+    "rev:order": {
+      "template": "${default}",
+      "comparator": "${rev}"
+    },
+    "__tmp__": {
+      "template": "${default}",
+      "//cf_paths": "/path/to/cf_datadir/__tmp__"
+    },
+    "__tmp_system__": {
+      "template": "${__system__}",
+      "//cf_paths": "/path/to/cf_datadir/__tmp_system__"
     }
   },
   "DBOptions": {
