@@ -203,7 +203,7 @@
       "params": {
         "mem_cap": "4G",
         "chunk_size": "256K",
-        "use_vm": true,
+        "use_vm": false,
         "use_hugepage": false,
         "//0 convert_to_sst": "kDontConvert is the default",
         "//1 convert_to_sst": "kDontConvert",
@@ -219,7 +219,7 @@
       "params": {
         "mem_cap": "16M",
         "chunk_size": "32K",
-        "use_vm": true,
+        "use_vm": false,
         "use_hugepage": false,
         "read_by_writer_token": true,
         "token_use_idle": true
